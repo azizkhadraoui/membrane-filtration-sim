@@ -1,0 +1,781 @@
+{
+ "summary": {
+  "total_s": 534.7,
+  "samples": 8,
+  "steady_cycle_s": 46.0,
+  "arm_busy_s": 295.9,
+  "arm_util": 0.553,
+  "stats": {
+   "arm_dry": {
+    "n": 8,
+    "mean": 17.3,
+    "max": 18.2
+   },
+   "dose": {
+    "n": 8,
+    "mean": 33.7,
+    "max": 64.6
+   },
+   "plate_in": {
+    "n": 8,
+    "mean": 13.8,
+    "max": 13.8
+   },
+   "arm_wet": {
+    "n": 8,
+    "mean": 14.9,
+    "max": 15.3
+   },
+   "tip_wash": {
+    "n": 8,
+    "mean": 4.7,
+    "max": 4.7
+   },
+   "plate_out": {
+    "n": 8,
+    "mean": 15.6,
+    "max": 15.6
+   },
+   "cip": {
+    "n": 8,
+    "mean": 37.8,
+    "max": 37.8
+   }
+  },
+  "cip_cycles": 8,
+  "tips": 8,
+  "results": [
+   {
+    "sample": 0,
+    "success": true,
+    "centroid_offset_mm": 0.3043320868061899,
+    "flatness_mm": 0.0006036887725526792,
+    "max_lift_mm": -0.0013917906116923257,
+    "fold": false,
+    "air_pocket": false,
+    "overhang": false,
+    "defect": "flat"
+   },
+   {
+    "sample": 1,
+    "success": true,
+    "centroid_offset_mm": 0.3325936105160102,
+    "flatness_mm": 0.0005953432385997396,
+    "max_lift_mm": -0.0014115911791002383,
+    "fold": false,
+    "air_pocket": false,
+    "overhang": false,
+    "defect": "flat"
+   },
+   {
+    "sample": 2,
+    "success": true,
+    "centroid_offset_mm": 1.1231852378012053,
+    "flatness_mm": 0.0007047555639870044,
+    "max_lift_mm": -0.0014348947584858635,
+    "fold": false,
+    "air_pocket": false,
+    "overhang": false,
+    "defect": "flat"
+   },
+   {
+    "sample": 3,
+    "success": true,
+    "centroid_offset_mm": 0.2952877220132119,
+    "flatness_mm": 0.0005892727500116527,
+    "max_lift_mm": -0.0014384273434465272,
+    "fold": false,
+    "air_pocket": false,
+    "overhang": false,
+    "defect": "flat"
+   },
+   {
+    "sample": 5,
+    "success": true,
+    "centroid_offset_mm": 0.5802410910025722,
+    "flatness_mm": 0.0006028544384789839,
+    "max_lift_mm": -0.0013818098886838465,
+    "fold": false,
+    "air_pocket": false,
+    "overhang": false,
+    "defect": "flat"
+   },
+   {
+    "sample": 4,
+    "success": true,
+    "centroid_offset_mm": 0.734692812685413,
+    "flatness_mm": 0.0006269749346729077,
+    "max_lift_mm": -0.0014271506756664137,
+    "fold": false,
+    "air_pocket": false,
+    "overhang": false,
+    "defect": "flat"
+   },
+   {
+    "sample": 6,
+    "success": true,
+    "centroid_offset_mm": 0.3284132923181984,
+    "flatness_mm": 0.0006054933462093076,
+    "max_lift_mm": -0.0013738133114050283,
+    "fold": false,
+    "air_pocket": false,
+    "overhang": false,
+    "defect": "flat"
+   },
+   {
+    "sample": 7,
+    "success": true,
+    "centroid_offset_mm": 0.41274449197523794,
+    "flatness_mm": 0.0005948305062783477,
+    "max_lift_mm": -0.001414310361385826,
+    "fold": false,
+    "air_pocket": false,
+    "overhang": false,
+    "defect": "flat"
+   }
+  ]
+ },
+ "jobs": [
+  {
+   "kind": "arm_dry",
+   "pos": 0,
+   "sample": 0,
+   "t0": 0.5,
+   "dur": 17.5
+  },
+  {
+   "kind": "arm_dry",
+   "pos": 1,
+   "sample": 1,
+   "t0": 18.0,
+   "dur": 17.6
+  },
+  {
+   "kind": "arm_dry",
+   "pos": 2,
+   "sample": 2,
+   "t0": 35.5,
+   "dur": 17.6
+  },
+  {
+   "kind": "arm_dry",
+   "pos": 3,
+   "sample": 3,
+   "t0": 53.1,
+   "dur": 17.8
+  },
+  {
+   "kind": "dose",
+   "pos": 0,
+   "sample": 0,
+   "t0": 18.0,
+   "dur": 64.6
+  },
+  {
+   "kind": "dose",
+   "pos": 1,
+   "sample": 1,
+   "t0": 82.6,
+   "dur": 24.5
+  },
+  {
+   "kind": "arm_dry",
+   "pos": 4,
+   "sample": 4,
+   "t0": 107.1,
+   "dur": 14.9
+  },
+  {
+   "kind": "arm_dry",
+   "pos": 5,
+   "sample": 5,
+   "t0": 122.0,
+   "dur": 18.2
+  },
+  {
+   "kind": "plate_in",
+   "pos": 0,
+   "sample": 0,
+   "t0": 132.6,
+   "dur": 13.8
+  },
+  {
+   "kind": "dose",
+   "pos": 2,
+   "sample": 2,
+   "t0": 107.0,
+   "dur": 44.2
+  },
+  {
+   "kind": "arm_wet",
+   "pos": 0,
+   "sample": 0,
+   "t0": 157.6,
+   "dur": 15.3
+  },
+  {
+   "kind": "tip_wash",
+   "pos": 0,
+   "sample": 0,
+   "t0": 172.9,
+   "dur": 4.7
+  },
+  {
+   "kind": "dose",
+   "pos": 3,
+   "sample": 3,
+   "t0": 151.2,
+   "dur": 32.5
+  },
+  {
+   "kind": "plate_out",
+   "pos": 0,
+   "sample": 0,
+   "t0": 172.9,
+   "dur": 15.6
+  },
+  {
+   "kind": "plate_in",
+   "pos": 1,
+   "sample": 1,
+   "t0": 188.5,
+   "dur": 13.8
+  },
+  {
+   "kind": "dose",
+   "pos": 4,
+   "sample": 4,
+   "t0": 183.7,
+   "dur": 22.9
+  },
+  {
+   "kind": "cip",
+   "pos": 0,
+   "sample": 0,
+   "t0": 172.9,
+   "dur": 37.8
+  },
+  {
+   "kind": "arm_wet",
+   "pos": 1,
+   "sample": 1,
+   "t0": 202.4,
+   "dur": 15.1
+  },
+  {
+   "kind": "tip_wash",
+   "pos": 1,
+   "sample": 1,
+   "t0": 217.5,
+   "dur": 4.7
+  },
+  {
+   "kind": "dose",
+   "pos": 5,
+   "sample": 5,
+   "t0": 206.6,
+   "dur": 22.4
+  },
+  {
+   "kind": "plate_out",
+   "pos": 1,
+   "sample": 1,
+   "t0": 217.5,
+   "dur": 15.6
+  },
+  {
+   "kind": "arm_dry",
+   "pos": 0,
+   "sample": 6,
+   "t0": 222.2,
+   "dur": 17.5
+  },
+  {
+   "kind": "plate_in",
+   "pos": 2,
+   "sample": 2,
+   "t0": 233.1,
+   "dur": 13.8
+  },
+  {
+   "kind": "cip",
+   "pos": 1,
+   "sample": 1,
+   "t0": 217.5,
+   "dur": 37.8
+  },
+  {
+   "kind": "dose",
+   "pos": 0,
+   "sample": 6,
+   "t0": 239.7,
+   "dur": 24.5
+  },
+  {
+   "kind": "arm_wet",
+   "pos": 2,
+   "sample": 2,
+   "t0": 258.5,
+   "dur": 14.9
+  },
+  {
+   "kind": "tip_wash",
+   "pos": 2,
+   "sample": 2,
+   "t0": 273.4,
+   "dur": 4.7
+  },
+  {
+   "kind": "plate_out",
+   "pos": 2,
+   "sample": 2,
+   "t0": 273.4,
+   "dur": 15.6
+  },
+  {
+   "kind": "arm_dry",
+   "pos": 1,
+   "sample": 7,
+   "t0": 278.1,
+   "dur": 17.6
+  },
+  {
+   "kind": "plate_in",
+   "pos": 3,
+   "sample": 3,
+   "t0": 289.0,
+   "dur": 13.8
+  },
+  {
+   "kind": "cip",
+   "pos": 2,
+   "sample": 2,
+   "t0": 273.4,
+   "dur": 37.8
+  },
+  {
+   "kind": "arm_wet",
+   "pos": 3,
+   "sample": 3,
+   "t0": 302.8,
+   "dur": 14.8
+  },
+  {
+   "kind": "tip_wash",
+   "pos": 3,
+   "sample": 3,
+   "t0": 317.6,
+   "dur": 4.7
+  },
+  {
+   "kind": "dose",
+   "pos": 1,
+   "sample": 7,
+   "t0": 295.7,
+   "dur": 34.1
+  },
+  {
+   "kind": "plate_out",
+   "pos": 3,
+   "sample": 3,
+   "t0": 317.6,
+   "dur": 15.6
+  },
+  {
+   "kind": "plate_in",
+   "pos": 5,
+   "sample": 5,
+   "t0": 333.2,
+   "dur": 13.8
+  },
+  {
+   "kind": "cip",
+   "pos": 3,
+   "sample": 3,
+   "t0": 317.6,
+   "dur": 37.8
+  },
+  {
+   "kind": "arm_wet",
+   "pos": 5,
+   "sample": 5,
+   "t0": 347.0,
+   "dur": 14.5
+  },
+  {
+   "kind": "tip_wash",
+   "pos": 5,
+   "sample": 5,
+   "t0": 361.6,
+   "dur": 4.7
+  },
+  {
+   "kind": "plate_out",
+   "pos": 5,
+   "sample": 5,
+   "t0": 361.6,
+   "dur": 15.6
+  },
+  {
+   "kind": "plate_in",
+   "pos": 4,
+   "sample": 4,
+   "t0": 377.2,
+   "dur": 13.8
+  },
+  {
+   "kind": "cip",
+   "pos": 5,
+   "sample": 5,
+   "t0": 361.6,
+   "dur": 37.8
+  },
+  {
+   "kind": "arm_wet",
+   "pos": 4,
+   "sample": 4,
+   "t0": 391.0,
+   "dur": 14.5
+  },
+  {
+   "kind": "tip_wash",
+   "pos": 4,
+   "sample": 4,
+   "t0": 405.5,
+   "dur": 4.7
+  },
+  {
+   "kind": "plate_out",
+   "pos": 4,
+   "sample": 4,
+   "t0": 405.5,
+   "dur": 15.6
+  },
+  {
+   "kind": "plate_in",
+   "pos": 0,
+   "sample": 6,
+   "t0": 421.1,
+   "dur": 13.8
+  },
+  {
+   "kind": "cip",
+   "pos": 4,
+   "sample": 4,
+   "t0": 405.5,
+   "dur": 37.8
+  },
+  {
+   "kind": "arm_wet",
+   "pos": 0,
+   "sample": 6,
+   "t0": 435.0,
+   "dur": 15.3
+  },
+  {
+   "kind": "tip_wash",
+   "pos": 0,
+   "sample": 6,
+   "t0": 450.3,
+   "dur": 4.7
+  },
+  {
+   "kind": "plate_out",
+   "pos": 0,
+   "sample": 6,
+   "t0": 450.3,
+   "dur": 15.6
+  },
+  {
+   "kind": "plate_in",
+   "pos": 1,
+   "sample": 7,
+   "t0": 465.9,
+   "dur": 13.8
+  },
+  {
+   "kind": "cip",
+   "pos": 0,
+   "sample": 6,
+   "t0": 450.3,
+   "dur": 37.8
+  },
+  {
+   "kind": "arm_wet",
+   "pos": 1,
+   "sample": 7,
+   "t0": 479.8,
+   "dur": 15.1
+  },
+  {
+   "kind": "tip_wash",
+   "pos": 1,
+   "sample": 7,
+   "t0": 494.9,
+   "dur": 4.7
+  },
+  {
+   "kind": "plate_out",
+   "pos": 1,
+   "sample": 7,
+   "t0": 494.9,
+   "dur": 15.6
+  },
+  {
+   "kind": "cip",
+   "pos": 1,
+   "sample": 7,
+   "t0": 494.9,
+   "dur": 37.8
+  }
+ ],
+ "events": [],
+ "wall_s": 425,
+ "samples": [
+  {
+   "id": 0,
+   "vessel": 0,
+   "plate": 0,
+   "vol": 28.382773994286538,
+   "filt": 80.79146855055481,
+   "t": {
+    "loaded0": 0.5,
+    "dosed": 76.8,
+    "filtered": 157.6,
+    "wet0": 157.6,
+    "transferred": 172.9,
+    "clean": 210.8
+   },
+   "dry": {
+    "success": true,
+    "centroid_offset_mm": 0.5314045072132775,
+    "defect": "flat"
+   },
+   "wet": {
+    "success": true,
+    "centroid_offset_mm": 0.3043320868061899,
+    "flatness_mm": 0.0006036887725526792,
+    "max_lift_mm": -0.0013917906116923257,
+    "fold": false,
+    "air_pocket": false,
+    "overhang": false,
+    "defect": "flat"
+   }
+  },
+  {
+   "id": 1,
+   "vessel": 1,
+   "plate": 1,
+   "vol": 9.31115276595823,
+   "filt": 70.66110542114116,
+   "t": {
+    "loaded0": 18.0,
+    "dosed": 101.6,
+    "filtered": 172.4,
+    "wet0": 202.4,
+    "transferred": 217.5,
+    "clean": 255.3
+   },
+   "dry": {
+    "success": true,
+    "centroid_offset_mm": 0.6545087050079763,
+    "defect": "flat"
+   },
+   "wet": {
+    "success": true,
+    "centroid_offset_mm": 0.3325936105160102,
+    "flatness_mm": 0.0005953432385997396,
+    "max_lift_mm": -0.0014115911791002383,
+    "fold": false,
+    "air_pocket": false,
+    "overhang": false,
+    "defect": "flat"
+   }
+  },
+  {
+   "id": 2,
+   "vessel": 2,
+   "plate": 2,
+   "vol": 34.02464765440872,
+   "filt": 106.51022309110887,
+   "t": {
+    "loaded0": 35.5,
+    "dosed": 146.1,
+    "filtered": 252.7,
+    "wet0": 258.5,
+    "transferred": 273.4,
+    "clean": 311.2
+   },
+   "dry": {
+    "success": true,
+    "centroid_offset_mm": 0.42278097704420475,
+    "defect": "flat"
+   },
+   "wet": {
+    "success": true,
+    "centroid_offset_mm": 1.1231852378012053,
+    "flatness_mm": 0.0007047555639870044,
+    "max_lift_mm": -0.0014348947584858635,
+    "fold": false,
+    "air_pocket": false,
+    "overhang": false,
+    "defect": "flat"
+   }
+  },
+  {
+   "id": 3,
+   "vessel": 3,
+   "plate": 3,
+   "vol": 27.412344824549756,
+   "filt": 99.17986243935994,
+   "t": {
+    "loaded0": 53.1,
+    "dosed": 178.9,
+    "filtered": 278.1,
+    "wet0": 302.8,
+    "transferred": 317.6,
+    "clean": 355.4
+   },
+   "dry": {
+    "success": true,
+    "centroid_offset_mm": 0.833488339916314,
+    "defect": "flat"
+   },
+   "wet": {
+    "success": true,
+    "centroid_offset_mm": 0.2952877220132119,
+    "flatness_mm": 0.0005892727500116527,
+    "max_lift_mm": -0.0014384273434465272,
+    "fold": false,
+    "air_pocket": false,
+    "overhang": false,
+    "defect": "flat"
+   }
+  },
+  {
+   "id": 4,
+   "vessel": 4,
+   "plate": 4,
+   "vol": 25.395999726893532,
+   "filt": 107.40289695151073,
+   "t": {
+    "loaded0": 107.1,
+    "dosed": 202.1,
+    "filtered": 309.7,
+    "wet0": 391.0,
+    "transferred": 405.5,
+    "clean": 443.3
+   },
+   "dry": {
+    "success": true,
+    "centroid_offset_mm": 0.4786615224188276,
+    "defect": "flat"
+   },
+   "wet": {
+    "success": true,
+    "centroid_offset_mm": 0.734692812685413,
+    "flatness_mm": 0.0006269749346729077,
+    "max_lift_mm": -0.0014271506756664137,
+    "fold": false,
+    "air_pocket": false,
+    "overhang": false,
+    "defect": "flat"
+   }
+  },
+  {
+   "id": 5,
+   "vessel": 5,
+   "plate": 5,
+   "vol": 34.10731373188903,
+   "filt": 70.10954000680593,
+   "t": {
+    "loaded0": 122.0,
+    "dosed": 224.8,
+    "filtered": 295.0,
+    "wet0": 347.0,
+    "transferred": 361.6,
+    "clean": 399.4
+   },
+   "dry": {
+    "success": false,
+    "centroid_offset_mm": 3.500340272299941,
+    "defect": "misaligned"
+   },
+   "wet": {
+    "success": true,
+    "centroid_offset_mm": 0.5802410910025722,
+    "flatness_mm": 0.0006028544384789839,
+    "max_lift_mm": -0.0013818098886838465,
+    "fold": false,
+    "air_pocket": false,
+    "overhang": false,
+    "defect": "flat"
+   }
+  },
+  {
+   "id": 6,
+   "vessel": 6,
+   "plate": 6,
+   "vol": 35.43693685080222,
+   "filt": 71.34342301221858,
+   "t": {
+    "loaded0": 222.2,
+    "dosed": 258.4,
+    "filtered": 329.8,
+    "wet0": 435.0,
+    "transferred": 450.3,
+    "clean": 488.1
+   },
+   "dry": {
+    "success": true,
+    "centroid_offset_mm": 0.3892810950715322,
+    "defect": "flat"
+   },
+   "wet": {
+    "success": true,
+    "centroid_offset_mm": 0.3284132923181984,
+    "flatness_mm": 0.0006054933462093076,
+    "max_lift_mm": -0.0013738133114050283,
+    "fold": false,
+    "air_pocket": false,
+    "overhang": false,
+    "defect": "flat"
+   }
+  },
+  {
+   "id": 7,
+   "vessel": 7,
+   "plate": 7,
+   "vol": 31.34897428575821,
+   "filt": 77.02622482410236,
+   "t": {
+    "loaded0": 278.1,
+    "dosed": 324.3,
+    "filtered": 401.5,
+    "wet0": 479.8,
+    "transferred": 494.9,
+    "clean": 532.7
+   },
+   "dry": {
+    "success": true,
+    "centroid_offset_mm": 1.106931372662527,
+    "defect": "flat"
+   },
+   "wet": {
+    "success": true,
+    "centroid_offset_mm": 0.41274449197523794,
+    "flatness_mm": 0.0005948305062783477,
+    "max_lift_mm": -0.001414310361385826,
+    "fold": false,
+    "air_pocket": false,
+    "overhang": false,
+    "defect": "flat"
+   }
+  }
+ ],
+ "filt_range": [
+  70.0,
+  110.0
+ ],
+ "positions": 6
+}

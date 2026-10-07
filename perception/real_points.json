@@ -1,0 +1,22 @@
+{
+ "_note": "Hand-placed point labels on real frames (360x640), made by eye BEFORE looking at any model prediction. Coarse: a few points per visible object, placed well inside object boundaries. Classes as in render_labels.CLASSES. Membrane under liquid counts as funnel (first visible surface).",
+ "filtration/ref_t20.png": [
+  [95, 330, "funnel"], [70, 285, "funnel"], [120, 300, "funnel"], [100, 350, "funnel"], [115, 210, "funnel"], [125, 160, "funnel"],
+  [197, 285, "agar"], [197, 311, "agar"], [185, 365, "agar"], [140, 370, "agar"], [142, 400, "agar"],
+  [157, 295, "plate"],
+  [185, 450, "background"], [270, 550, "background"], [325, 350, "background"], [70, 500, "background"], [190, 185, "background"], [150, 50, "background"]
+ ],
+ "filtration/f_28.png": [
+  [93, 343, "membrane"], [82, 340, "membrane"], [104, 340, "membrane"],
+  [240, 330, "funnel"], [290, 330, "funnel"], [107, 187, "funnel"], [100, 233, "funnel"],
+  [167, 373, "agar"], [120, 373, "agar"], [173, 407, "agar"],
+  [167, 293, "background"], [40, 500, "background"], [273, 533, "background"], [153, 467, "background"], [333, 253, "background"]
+ ],
+ "filtration/f_29.png": [
+  [183, 292, "membrane"], [195, 292, "membrane"], [180, 306, "agar"],
+  [67, 280, "funnel"], [67, 320, "funnel"], [100, 220, "funnel"],
+  [167, 373, "agar"], [167, 400, "agar"],
+  [140, 300, "plate"],
+  [227, 333, "background"], [320, 267, "background"], [247, 533, "background"], [60, 467, "background"]
+ ]
+}

@@ -1,0 +1,287 @@
+<title>Membrane Filtration Cell Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a lab-notebook report. One reading column (~72ch) with figures allowed to run wider; results first, method and gaps after. */
+:root {
+  --bg: #f6f7f5;          /* bench-paper neutral, faint green-grey */
+  --surface: #fcfcfb;
+  --ink: #12171c;
+  --ink-2: #4d5560;
+  --muted: #7c838c;
+  --rule: #dcdfdb;
+  --accent: #2a78d6;      /* matches chart slot 1 and the video */
+  --good: #0b7a35;
+  --bad: #c03636;
+  --series-1: #2a78d6; --series-2: #eb6834; --series-3: #1baf7a;
+  --grid: #e1e0d9; --axis: #c3c2b7;
+  --f-display: "Barlow Semi Condensed", "Bahnschrift", "Arial Narrow", sans-serif;
+  --f-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", monospace;
+  --s-1: .25rem; --s-2: .5rem; --s-3: .75rem; --s-4: 1rem; --s-5: 1.5rem; --s-6: 2.25rem; --s-7: 3.5rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111416; --surface: #181b1e; --ink: #eef0ee; --ink-2: #b9bfc6; --muted: #8b9199; --rule: #2c3135;
+    --accent: #5598e7; --good: #3cbf6a; --bad: #ef6b6b;
+    --series-1: #3987e5; --series-2: #d95926; --series-3: #199e70; --grid: #2c2c2a; --axis: #383835;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111416; --surface: #181b1e; --ink: #eef0ee; --ink-2: #b9bfc6; --muted: #8b9199; --rule: #2c3135;
+  --accent: #5598e7; --good: #3cbf6a; --bad: #ef6b6b;
+  --series-1: #3987e5; --series-2: #d95926; --series-3: #199e70; --grid: #2c2c2a; --axis: #383835;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 400 16px/1.6 var(--f-body); }
+.page { max-width: 1080px; margin: 0 auto; padding-inline: 20px; padding-block: var(--s-6) var(--s-7); display: grid; gap: var(--s-7); }
+.read { max-width: 72ch; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 600; line-height: 1.1; text-wrap: balance; margin: 0; letter-spacing: .005em; }
+h1 { font-size: clamp(2.1rem, 4.6vw, 3.3rem); font-weight: 700; }
+h2 { font-size: 1.9rem; }
+h3 { font-size: 1.25rem; }
+p { margin: 0; }
+.eyebrow { font: 500 .78rem/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.lede { font-size: 1.15rem; color: var(--ink-2); }
+.muted, .sub { color: var(--muted); }
+section { display: grid; gap: var(--s-5); }
+.head { display: grid; gap: var(--s-4); }
+.meta { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-5); font: 400 .85rem/1.4 var(--f-mono); color: var(--muted); }
+.figure-wide { display: grid; gap: var(--s-3); }
+video, .figure-wide img { width: 100%; max-width: 100%; border-radius: 6px; background: #0e1114; display: block; aspect-ratio: 16 / 9; object-fit: contain; }
+figcaption, .caption { font-size: .88rem; color: var(--muted); }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0; border-block: 1px solid var(--rule); }
+.kpi { padding: var(--s-4) var(--s-4) var(--s-4) 0; display: grid; gap: var(--s-1); align-content: start; }
+.kpi + .kpi { padding-left: var(--s-4); border-left: 1px solid var(--rule); }
+.kpi .v { font: 600 2.4rem/1 var(--f-display); font-variant-numeric: tabular-nums; }
+.kpi .l { font-size: .88rem; color: var(--ink-2); }
+.scope { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--s-5); }
+.scope > div { min-width: 0; display: grid; gap: var(--s-3); align-content: start; }
+.scope ul { margin: 0; padding-left: 1.1rem; display: grid; gap: var(--s-2); }
+.tag { font: 500 .75rem/1 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; padding: .35rem .55rem; border-radius: 4px; justify-self: start; }
+.tag.yes { color: var(--good); background: color-mix(in srgb, var(--good) 12%, transparent); }
+.tag.no { color: var(--bad); background: color-mix(in srgb, var(--bad) 12%, transparent); }
+.quote { border-left: 3px solid var(--accent); padding-left: var(--s-4); font-style: italic; color: var(--ink-2); }
+.table-wrap { overflow-x: auto; border-top: 1px solid var(--rule); }
+table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+th, td { text-align: left; padding: .6rem .7rem .6rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+thead th { font: 500 .75rem/1.3 var(--f-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+tbody th { font-weight: 500; }
+tbody th .sub { display: block; font-weight: 400; font-size: .82rem; }
+.num { text-align: right; font-variant-numeric: tabular-nums; font-family: var(--f-mono); font-size: .88rem; white-space: nowrap; }
+.strong { font-weight: 600; color: var(--ink); }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--s-6); align-items: start; }
+.two > * { min-width: 0; }
+.chart { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: var(--s-4); position: relative; }
+.chart svg { width: 100%; height: auto; display: block; overflow: visible; }
+.legend { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-4); font-size: .85rem; color: var(--ink-2); margin-bottom: var(--s-3); }
+.legend span { display: inline-flex; align-items: center; gap: .45rem; }
+.legend i { width: 18px; height: 3px; border-radius: 2px; display: inline-block; }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font: 400 .8rem/1.45 var(--f-mono); padding: .5rem .65rem; border-radius: 5px; white-space: nowrap; transform: translate(-50%, -110%); }
+.tip[hidden] { display: none !important; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--s-4); }
+.gallery figure { margin: 0; display: grid; gap: var(--s-2); min-width: 0; }
+.gallery img, .two img { width: 100%; border-radius: 5px; border: 1px solid var(--rule); display: block; }
+ol.plan { margin: 0; padding-left: 1.3rem; display: grid; gap: var(--s-3); }
+ol.plan li::marker { font-family: var(--f-mono); color: var(--accent); }
+dl.gaps { margin: 0; display: grid; grid-template-columns: minmax(150px, 220px) 1fr; gap: var(--s-3) var(--s-5); }
+dl.gaps dt { font-weight: 600; }
+dl.gaps dd { margin: 0; color: var(--ink-2); min-width: 0; }
+@media (max-width: 560px) { dl.gaps { grid-template-columns: 1fr; } dl.gaps dd { margin-bottom: var(--s-3); } .kpi + .kpi { border-left: 0; padding-left: 0; border-top: 1px solid var(--rule); } }
+code { font-family: var(--f-mono); font-size: .88em; }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+footer { font-size: .85rem; color: var(--muted); border-top: 1px solid var(--rule); padding-top: var(--s-4); }
+</style>
+
+<main class="page">
+  <header class="head">
+    <p class="eyebrow">Simulation proof of concept · Variant A cell (arm + tools)</p>
+    <h1>Automating membrane filtration: what a simulated Franka cell shows</h1>
+    <p class="lede read">A food-microbiology lab filters up to 100 sugar-solution samples a day by hand. This study builds the whole per-sample sequence in MuJoCo with a Franka Panda, puts the hardest step (lifting a wet 47&nbsp;mm membrane off the frit and laying it on agar without folds or air pockets) under randomised testing, trains a vision policy for it, and tests perception on the lab's own footage.</p>
+    <div class="meta"><span>MuJoCo 3.14 · Franka Panda (Menagerie)</span><span>No hardware used</span><span>October 2026</span></div>
+  </header>
+
+  <section aria-label="Demo video and headline results">
+    <div class="figure-wide">
+      {{VIDEO}}
+      <p class="caption">90-second demo: full sequence, membrane roll-on, learned policy, perception on client footage, cycle time.</p>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><span class="v">{{EXPERT_NOM}}</span><span class="l">Membrane transfers flat and centred, scripted expert, {{EXPERT_N}} randomised runs</span></div>
+      <div class="kpi"><span class="v">{{POLICY}}</span><span class="l">Learned vision policy, {{POLICY_N}} unseen runs: centred within 3&nbsp;mm ({{POLICY_FLAT}} laid flat, median offset {{POLICY_OFF}}&nbsp;mm)</span></div>
+      <div class="kpi"><span class="v">{{CYCLE}} min</span><span class="l">Cycle per sample, one arm, 2+ filtration positions (target 5 min)</span></div>
+      <div class="kpi"><span class="v">{{ARM}} s</span><span class="l">Arm time per sample, measured in the sim cell</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="scope">
+    <h2 id="scope">What this proves, and what it does not</h2>
+    <div class="scope">
+      <div>
+        <span class="tag yes">Shown in simulation</span>
+        <ul>
+          <li>An arm-based cell layout reaches every station: input/output plate stacks, membrane magazine, 6-position filter block, vessel rack, wash station.</li>
+          <li>The full per-sample sequence runs end to end, with measured step times.</li>
+          <li>Cycle time against the 5-minute target, including slow or stalled filtrations.</li>
+          <li>A vision policy can perform the membrane transfer on randomised layouts it has not seen.</li>
+          <li>Perception trained only on synthetic images, run on the lab's real footage.</li>
+        </ul>
+      </div>
+      <div>
+        <span class="tag no">Not shown</span>
+        <ul>
+          <li>That a wet MCE membrane behaves like the simulated sheet: adhesion, surface tension and air entrapment on agar are not modelled.</li>
+          <li>Real tweezer or fingertip performance. The grasp is modelled as a clamp on the membrane edge.</li>
+          <li>Sim-to-real transfer of the policy.</li>
+          <li>Reliability under real lab lighting and occlusion, and production readiness.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="quote read">The membrane is a stable thin-shell approximation tuned for solver stability, not for wet-membrane physics. The physics gap is exactly what the Franka phase is for.</p>
+  </section>
+
+  <section aria-labelledby="transfer">
+    <div class="read" style="display:grid;gap:var(--s-3)">
+      <p class="eyebrow">The critical step</p>
+      <h2 id="transfer">Membrane from frit to agar</h2>
+      <p>The sheet is gripped at its edge, lifted so it hangs, and laid down far edge first. The tips then move forward and down while their tilt flattens out, so the contact line rolls across the membrane the way a technician avoids air pockets. Each run randomises membrane position (±3&nbsp;mm) and rotation, plate position (±5&nbsp;mm) and grasp direction.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Controller</th><th scope="col" class="num">Success</th><th scope="col" class="num">Laid flat</th><th scope="col" class="num">Runs</th><th scope="col" class="num">Offset mm, median / p95 (transferred)</th><th scope="col" class="num">Flat</th><th scope="col" class="num">Misaligned</th><th scope="col" class="num">Folded</th><th scope="col" class="num">Bubble</th><th scope="col" class="num">Not grasped</th><th scope="col" class="num">Other</th></tr></thead>
+        <tbody>{{TRANSFER_ROWS}}</tbody>
+      </table>
+    </div>
+    <p class="read"><strong>How far the learned policy gets:</strong> it moves the membrane in {{POLICY_MOVED}} of runs and lays it flat (no fold, air pocket, overhang or tear) in {{POLICY_FLAT}}. The median placement is {{POLICY_OFF}}&nbsp;mm from centre, so {{POLICY}} meet the 3&nbsp;mm tolerance and {{POLICY_W5}} are within 5&nbsp;mm. The remaining error is random scatter of about 2&nbsp;mm per axis with no systematic bias. More demonstrations and higher-resolution views are the next levers, and the real-robot phase retrains on real images anyway.</p>
+    <p class="caption read">Success means all of: centroid within 3&nbsp;mm of plate centre, vertex height spread under 1&nbsp;mm, no vertex over 2&nbsp;mm above the agar, no fold, no air-pocket patch (3+ interior vertices over 0.8&nbsp;mm), no overhang. The perturbed row deliberately breaks the expert to produce labelled defects for the classifier.</p>
+    <div class="two">
+      <div style="display:grid;gap:var(--s-3)">
+        <h3>Learned policy</h3>
+        <p>An ACT policy (action-chunking transformer with a CVAE, implemented in PyTorch for this study) trained on {{N_DEMOS}} expert demonstrations with randomised lighting, colours and camera pose. During recording the expert's motion was pushed off course by small random offsets while the clean corrective target was recorded, so the policy also learns how to recover. Inputs are a top camera, a wrist camera and a close plate camera at 128×128 px, plus joint state. It outputs the tip pose and gripper command at 10&nbsp;Hz, predicting 2-second chunks with temporal ensembling. Trained for {{STEPS}} steps (batch 48) on one RTX 4060 laptop GPU; held-out validation L1 on normalised actions {{VAL_L1}}.</p>
+        <p class="muted">LeRobot was not used: its current release pins an older torch that would have replaced the CUDA build on this machine. The dataset format is plain NumPy, so converting to a LeRobotDataset is a small step.</p>
+      </div>
+      <figure style="margin:0;display:grid;gap:var(--s-2)">{{ROLLON}}<figcaption>Roll-on: far edge down first, contact line sweeping toward the gripped edge.</figcaption></figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="cycle">
+    <div class="read" style="display:grid;gap:var(--s-3)">
+      <p class="eyebrow">Throughput</p>
+      <h2 id="cycle">Cycle time against the 5-minute target</h2>
+      <p>A discrete-event model (SimPy) uses the step times measured in the sim cell. The arm is busy for loading and unloading. During filtration it is free to serve other positions; funnel rinsing and disinfection happen at the wash station, off the arm.</p>
+    </div>
+    <div class="two">
+      <div class="chart" id="cyc-chart">
+        <div class="legend" id="cyc-legend"></div>
+        <svg id="cyc-svg" viewBox="0 0 560 330" role="img" aria-label="Cycle time per sample against number of filtration positions"></svg>
+        <div class="tip" id="cyc-tip" hidden></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Step (one sample)</th><th scope="col" class="num">Time</th><th scope="col">Arm</th></tr></thead>
+          <tbody>{{STEP_ROWS}}</tbody>
+        </table>
+      </div>
+    </div>
+    <p class="read">With one arm the cell levels off at about {{CYCLE}} minutes per sample once two positions run in parallel: the arm, not filtration, is the bottleneck. That is about 5.3 hours for 100 samples. If filtrations slow toward 10 minutes, four positions recover the same rate. A second arm, or faster arm motions, roughly halves it. Arm motions in the sim are deliberately conservative (0.25–0.35 m/s), so these step times are an upper bound.</p>
+  </section>
+
+  <section aria-labelledby="perception">
+    <div class="read" style="display:grid;gap:var(--s-3)">
+      <p class="eyebrow">Perception</p>
+      <h2 id="perception">Sim-trained perception on the lab's own footage</h2>
+      <p>A segmentation network (U-Net, ResNet18 encoder) trained only on 5,235 rendered images with automatic labels for membrane, frit, funnel, dish, lid and agar. On held-out sim scenes it reaches mIoU {{SEG_MIOU}}.</p>
+      <p><strong>On the lab's own videos it does not transfer yet.</strong> Of {{REAL_N}} points hand-placed on real frames before predictions were viewed, only {{REAL_FG}} of the object points are labelled correctly; real funnels mostly read as background and agar plates are not found. Closing this gap needs a small set of labelled real frames for fine-tuning, which the Franka phase produces anyway.</p>
+    </div>
+    {{PERCEPTION}}
+    <div class="two">
+      <figure style="margin:0;display:grid;gap:var(--s-2)">{{DEFECT_CM}}<figcaption>Defect classifier on top-down sim crops, labels from the sim metrics. {{DEFECT_TEXT}}</figcaption></figure>
+      <figure style="margin:0;display:grid;gap:var(--s-2)">{{STALL}}<figcaption>Stalled-filtration flag: liquid level read from images; less than 3% change over 10 minutes while liquid remains raises the flag (time compressed in sim). {{STALL_TEXT}}</figcaption></figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="gaps">
+    <h2 id="gaps">Simulation choices and known gaps</h2>
+    <dl class="gaps">
+      <dt>Membrane model</dt><dd>61-vertex triangulated disc (47&nbsp;mm), MuJoCo 2D flex with bending elasticity (E = 20&nbsp;MPa, 0.12&nbsp;mm, 0.4&nbsp;g). Edge constraints were stiffened after the defaults let the sheet stretch 25–60% when lifted. No wetting, adhesion or air.</dd>
+      <dt>Grasp</dt><dd>The tips close on the edge and a five-vertex edge patch is clamped to the hand. Clamping only three edge vertices behaves like a hinge and the sheet folds.</dd>
+      <dt>Contact surfaces</dt><dd>MuJoCo caps flex contacts at 50 per body pair, which left 11 of 61 vertices unsupported, so frit, agar and magazine tops are each built from nine separate tiles.</dd>
+      <dt>Rigid handling</dt><dd>Plates, lid, funnel, vessel and cap are carried kinematically once gripped. The 90&nbsp;mm Petri dish is wider than the Franka Hand's 80&nbsp;mm stroke, so dishes and lids are pinched at the rim: the real cell needs a rim gripper or tool change.</dd>
+      <dt>Dosing and filtration</dt><dd>Pouring and filtration are shown as animated liquid levels; dosing by pipette, vacuum and rinsing are not simulated. Filtration time in the model is 3 minutes (10 minutes for the slow case).</dd>
+      <dt>Arm</dt><dd>Gravity-compensated position control with differential IK (mink). A real Franka compensates gravity internally; without it the sim arm sagged 3–7&nbsp;mm.</dd>
+    </dl>
+  </section>
+
+  <section aria-labelledby="next">
+    <div class="read" style="display:grid;gap:var(--s-3)">
+      <p class="eyebrow">Next</p>
+      <h2 id="next">Proposed Franka test (about one week once access and materials exist)</h2>
+      <ol class="plan">
+        <li>Mount an overhead and a wrist camera in the same layout as the sim, and calibrate them.</li>
+        <li>Collect 50–100 teleoperated demonstrations of the membrane transfer with real membranes and agar plates.</li>
+        <li>Retrain the same ACT policy on real data, optionally co-trained with the sim demonstrations.</li>
+        <li>Run 50 rollouts scored with the same metric definitions, judged by the perception stack.</li>
+      </ol>
+      <p class="muted">Needed from the lab side: Panda or FR3, gripper type (and any suction), cameras and mounting points, the consumables at the arm (funnels, frit base, membranes, agar plates), network access for two camera streams, and who is on site for resets and safety. Policy inference can run remotely with roughly 100&nbsp;ms latency if it sends 10–20-step action chunks; the real-time control loop stays on the arm's PC.</p>
+    </div>
+  </section>
+
+  <footer>All numbers on this page are generated from the simulation result files. Simulation only: no hardware was used.</footer>
+</main>
+
+<script>
+(function () {
+  var data = {{CYC_JSON}};
+  var svg = document.getElementById("cyc-svg");
+  if (!data || !svg) return;
+  var W = 560, H = 330, m = { l: 44, r: 12, t: 12, b: 40 };
+  var xs = data.positions, ymax = 0;
+  data.series.forEach(function (s) { s.values.forEach(function (v) { ymax = Math.max(ymax, v); }); });
+  ymax = Math.ceil(ymax / 2) * 2;
+  var x = function (i) { return m.l + (xs[i] - xs[0]) / (xs[xs.length - 1] - xs[0]) * (W - m.l - m.r); };
+  var y = function (v) { return H - m.b - v / ymax * (H - m.t - m.b); };
+  var ns = "http://www.w3.org/2000/svg", out = "";
+  var cssVar = ["var(--series-1)", "var(--series-2)", "var(--series-3)"];
+  for (var g = 0; g <= ymax; g += 2) {
+    out += '<line x1="' + m.l + '" x2="' + (W - m.r) + '" y1="' + y(g) + '" y2="' + y(g) + '" stroke="var(--grid)" stroke-width="1"/>';
+    out += '<text x="' + (m.l - 8) + '" y="' + (y(g) + 4) + '" text-anchor="end" font-size="11" fill="var(--muted)" font-family="IBM Plex Mono, monospace">' + g + '</text>';
+  }
+  xs.forEach(function (p, i) { out += '<text x="' + x(i) + '" y="' + (H - m.b + 18) + '" text-anchor="middle" font-size="11" fill="var(--muted)" font-family="IBM Plex Mono, monospace">' + p + '</text>'; });
+  out += '<text x="' + ((W + m.l) / 2) + '" y="' + (H - 4) + '" text-anchor="middle" font-size="12" fill="var(--ink-2)">Parallel filtration positions</text>';
+  out += '<text transform="translate(12 ' + ((H - m.b) / 2) + ') rotate(-90)" text-anchor="middle" font-size="12" fill="var(--ink-2)">min per sample</text>';
+  out += '<line x1="' + m.l + '" x2="' + (W - m.r) + '" y1="' + y(5) + '" y2="' + y(5) + '" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="6 4"/>';
+  out += '<text x="' + (W - m.r) + '" y="' + (y(5) - 6) + '" text-anchor="end" font-size="11" fill="var(--ink)">5 min target</text>';
+  out += '<line id="cyc-cross" y1="' + m.t + '" y2="' + (H - m.b) + '" stroke="var(--axis)" stroke-width="1" visibility="hidden"/>';
+  data.series.forEach(function (s, k) {
+    var d = s.values.map(function (v, i) { return (i ? "L" : "M") + x(i).toFixed(1) + " " + y(v).toFixed(1); }).join(" ");
+    out += '<path d="' + d + '" fill="none" stroke="' + cssVar[k] + '" stroke-width="2" stroke-linejoin="round"/>';
+    s.values.forEach(function (v, i) { out += '<circle cx="' + x(i) + '" cy="' + y(v) + '" r="4" fill="' + cssVar[k] + '" stroke="var(--surface)" stroke-width="2"/>'; });
+  });
+  xs.forEach(function (p, i) {
+    var w = (W - m.l - m.r) / (xs.length - 1);
+    out += '<rect class="hit" data-i="' + i + '" x="' + (x(i) - w / 2) + '" y="' + m.t + '" width="' + w + '" height="' + (H - m.t - m.b) + '" fill="transparent"/>';
+  });
+  svg.innerHTML = out;
+  document.getElementById("cyc-legend").innerHTML = data.series.map(function (s, k) {
+    return '<span><i style="background:' + cssVar[k] + '"></i>' + s.name + '</span>';
+  }).join("");
+  var tip = document.getElementById("cyc-tip"), cross = document.getElementById("cyc-cross"), box = document.getElementById("cyc-chart");
+  svg.querySelectorAll(".hit").forEach(function (r) {
+    r.addEventListener("mouseenter", function () {
+      var i = +r.dataset.i;
+      cross.setAttribute("x1", x(i)); cross.setAttribute("x2", x(i)); cross.setAttribute("visibility", "visible");
+      tip.innerHTML = "<strong>" + xs[i] + " position" + (xs[i] > 1 ? "s" : "") + "</strong><br>" + data.series.map(function (s) { return s.name + ": " + s.values[i].toFixed(2) + " min"; }).join("<br>");
+      var sb = svg.getBoundingClientRect(), bb = box.getBoundingClientRect();
+      tip.style.left = (sb.left - bb.left + x(i) / W * sb.width) + "px";
+      var top = Math.min.apply(null, data.series.map(function (s) { return y(s.values[i]); }));
+      tip.style.top = (sb.top - bb.top + Math.max(top, 90) / H * sb.height - 8) + "px";
+      tip.hidden = false;
+    });
+  });
+  svg.addEventListener("mouseleave", function () { tip.hidden = true; cross.setAttribute("visibility", "hidden"); });
+})();
+</script>

@@ -1,0 +1,10 @@
+step,seconds,note
+plate_prep,31.1,measured in sim
+membrane_to_frit,21.5,measured in sim
+funnel_on,19.0,measured in sim
+open_vessel,15.3,measured in sim
+dose,27.4,measured in sim
+filtration,180.0,model value; sim shows a 7.7 s time-lapse
+funnel_off,16.5,measured in sim
+transfer,23.1,measured in sim
+lid_and_stack,37.5,measured in sim

@@ -1,0 +1,39 @@
+# environment and third-party clones (re-create; see README)
+.venv/
+__pycache__/
+*.pyc
+assets/mujoco_menagerie/
+
+# data, weights, snapshots (large; regenerate or share separately)
+learn/data/
+learn/data_dart/
+learn/*.pt
+learn/*.log.json
+learn/gen_*.txt
+learn/train_*.txt
+perception/data/
+perception/*.pt
+releases/
+
+# client footage and anything derived from it
+perception/real_frames/
+results/perception/
+results/episodes/
+results/line_stills/
+
+# bulky outputs
+results/*.mp4
+results/*.npz
+results/scene_*.png
+results/stills/
+report/site/
+report/pdf_fig/
+*.mp4
+*.npz
+*.npy
+
+MUJOCO_LOG.TXT
+results/*.log
+results/*_log.txt
+results/Membrane_Filtration_Sim_Report.pdf
+results/*_trace_hud.json

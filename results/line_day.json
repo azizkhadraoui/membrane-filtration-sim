@@ -1,0 +1,98 @@
+{
+ "durations": {
+  "arm_dry": 17.3,
+  "arm_wet": 14.9,
+  "tip_wash": 4.7,
+  "dose": 33.7,
+  "dose_zone": 15.502000000000002,
+  "plate_in": 13.8,
+  "plate_out": 15.6,
+  "cip": 37.8
+ },
+ "measured": true,
+ "rows": [
+  {
+   "steady_per_hour": 22.273908661660947,
+   "min_per_sample": 2.6956702110777857,
+   "arm_util": 0.22838958333333276,
+   "doser_util": 0.20805069444444374,
+   "per_hour": 22.025,
+   "positions": 2
+  },
+  {
+   "steady_per_hour": 32.48561644090256,
+   "min_per_sample": 1.8474681285674965,
+   "arm_util": 0.3360298611111094,
+   "doser_util": 0.30493819444444376,
+   "per_hour": 32.3,
+   "positions": 3
+  },
+  {
+   "steady_per_hour": 41.45023558702634,
+   "min_per_sample": 1.4484347018395904,
+   "arm_util": 0.4260187499999974,
+   "doser_util": 0.38848611111111225,
+   "per_hour": 41.1,
+   "positions": 4
+  },
+  {
+   "steady_per_hour": 59.0918818054256,
+   "min_per_sample": 1.0154847291389082,
+   "arm_util": 0.6036923611111085,
+   "doser_util": 0.5504333333333379,
+   "per_hour": 58.125,
+   "positions": 6
+  },
+  {
+   "steady_per_hour": 68.44306561971699,
+   "min_per_sample": 0.8767039733133679,
+   "arm_util": 0.7052375000000015,
+   "doser_util": 0.641938194444451,
+   "per_hour": 67.75,
+   "positions": 8
+  },
+  {
+   "steady_per_hour": 70.19867085973183,
+   "min_per_sample": 0.8547187473789573,
+   "arm_util": 0.7223430555555577,
+   "doser_util": 0.6592562500000069,
+   "per_hour": 69.35,
+   "positions": 10
+  },
+  {
+   "steady_per_hour": 70.26044381119354,
+   "min_per_sample": 0.8539663083969697,
+   "arm_util": 0.7235659722222245,
+   "doser_util": 0.6608944444444514,
+   "per_hour": 69.325,
+   "positions": 12
+  }
+ ],
+ "slow_6": 29.22058855982077,
+ "autonomy": {
+  "100 samples/day": {
+   "membranes": 35.0,
+   "plates": 24.0,
+   "tips": 23.0,
+   "sanitant_samples": 96.0
+  },
+  "300 samples/day": {
+   "membranes": 11.7,
+   "plates": 8.0,
+   "tips": 7.7,
+   "sanitant_samples": 32.0
+  },
+  "full speed (6 positions)": {
+   "membranes": 2.5,
+   "plates": 1.7,
+   "tips": 1.6,
+   "sanitant_samples": 6.8
+  }
+ },
+ "cap": {
+  "membranes": 150,
+  "plates": 100,
+  "tips": 96,
+  "sanitant_samples": 400
+ }
+}

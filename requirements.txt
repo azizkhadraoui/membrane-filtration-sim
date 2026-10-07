@@ -1,0 +1,12 @@
+mujoco>=3.14
+mink
+simpy
+numpy
+matplotlib
+opencv-python
+imageio[ffmpeg]
+pillow
+reportlab
+pypdfium2
+torch
+torchvision
