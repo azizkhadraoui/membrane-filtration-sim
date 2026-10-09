@@ -12,7 +12,7 @@ import numpy as np
 import mujoco
 import imageio.v2 as iio2
 
-from scene.line import load
+from scene.line import load, update_telescopes
 from control.line_hud import make_hud
 
 RES = Path(__file__).resolve().parents[1] / "results"
@@ -36,6 +36,7 @@ def apply(m, d, tr, idx):
     d.qvel[:] = 0
     d.mocap_pos[:] = tr["mp"][idx]
     d.mocap_quat[:] = tr["mq"][idx]
+    update_telescopes(m, d)
     mujoco.mj_forward(m, d)
 
 

@@ -1,9 +1,9 @@
 {
  "summary": {
-  "total_s": 534.7,
+  "total_s": 534.8,
   "samples": 8,
   "steady_cycle_s": 46.0,
-  "arm_busy_s": 295.9,
+  "arm_busy_s": 296.0,
   "arm_util": 0.553,
   "stats": {
    "arm_dry": {
@@ -48,9 +48,9 @@
    {
     "sample": 0,
     "success": true,
-    "centroid_offset_mm": 0.3043320868061899,
-    "flatness_mm": 0.0006036887725526792,
-    "max_lift_mm": -0.0013917906116923257,
+    "centroid_offset_mm": 0.3255541440622283,
+    "flatness_mm": 0.000596323365746707,
+    "max_lift_mm": -0.0013955486911059606,
     "fold": false,
     "air_pocket": false,
     "overhang": false,
@@ -59,9 +59,9 @@
    {
     "sample": 1,
     "success": true,
-    "centroid_offset_mm": 0.3325936105160102,
-    "flatness_mm": 0.0005953432385997396,
-    "max_lift_mm": -0.0014115911791002383,
+    "centroid_offset_mm": 0.41003688148034206,
+    "flatness_mm": 0.0005944482397644606,
+    "max_lift_mm": -0.0014005530110400982,
     "fold": false,
     "air_pocket": false,
     "overhang": false,
@@ -70,9 +70,9 @@
    {
     "sample": 2,
     "success": true,
-    "centroid_offset_mm": 1.1231852378012053,
-    "flatness_mm": 0.0007047555639870044,
-    "max_lift_mm": -0.0014348947584858635,
+    "centroid_offset_mm": 0.8569483191603358,
+    "flatness_mm": 0.0006594833487943815,
+    "max_lift_mm": -0.0013852296336155229,
     "fold": false,
     "air_pocket": false,
     "overhang": false,
@@ -81,9 +81,9 @@
    {
     "sample": 3,
     "success": true,
-    "centroid_offset_mm": 0.2952877220132119,
-    "flatness_mm": 0.0005892727500116527,
-    "max_lift_mm": -0.0014384273434465272,
+    "centroid_offset_mm": 0.8950847576373768,
+    "flatness_mm": 0.0006165201112595391,
+    "max_lift_mm": -0.0014232793402475102,
     "fold": false,
     "air_pocket": false,
     "overhang": false,
@@ -92,9 +92,9 @@
    {
     "sample": 5,
     "success": true,
-    "centroid_offset_mm": 0.5802410910025722,
-    "flatness_mm": 0.0006028544384789839,
-    "max_lift_mm": -0.0013818098886838465,
+    "centroid_offset_mm": 0.791405107621319,
+    "flatness_mm": 0.0006082863506077092,
+    "max_lift_mm": -0.0014740345043121744,
     "fold": false,
     "air_pocket": false,
     "overhang": false,
@@ -103,9 +103,9 @@
    {
     "sample": 4,
     "success": true,
-    "centroid_offset_mm": 0.734692812685413,
-    "flatness_mm": 0.0006269749346729077,
-    "max_lift_mm": -0.0014271506756664137,
+    "centroid_offset_mm": 0.6842435700418509,
+    "flatness_mm": 0.0006065406773968302,
+    "max_lift_mm": -0.001433919910870038,
     "fold": false,
     "air_pocket": false,
     "overhang": false,
@@ -114,9 +114,9 @@
    {
     "sample": 6,
     "success": true,
-    "centroid_offset_mm": 0.3284132923181984,
-    "flatness_mm": 0.0006054933462093076,
-    "max_lift_mm": -0.0013738133114050283,
+    "centroid_offset_mm": 0.2853139047513036,
+    "flatness_mm": 0.000590407956317113,
+    "max_lift_mm": -0.0013931268419368342,
     "fold": false,
     "air_pocket": false,
     "overhang": false,
@@ -125,9 +125,9 @@
    {
     "sample": 7,
     "success": true,
-    "centroid_offset_mm": 0.41274449197523794,
-    "flatness_mm": 0.0005948305062783477,
-    "max_lift_mm": -0.001414310361385826,
+    "centroid_offset_mm": 0.5344858307146039,
+    "flatness_mm": 0.0006004634327628935,
+    "max_lift_mm": -0.0013620598503048115,
     "fold": false,
     "air_pocket": false,
     "overhang": false,
@@ -406,14 +406,14 @@
    "kind": "tip_wash",
    "pos": 5,
    "sample": 5,
-   "t0": 361.6,
+   "t0": 361.5,
    "dur": 4.7
   },
   {
    "kind": "plate_out",
    "pos": 5,
    "sample": 5,
-   "t0": 361.6,
+   "t0": 361.5,
    "dur": 15.6
   },
   {
@@ -427,7 +427,7 @@
    "kind": "cip",
    "pos": 5,
    "sample": 5,
-   "t0": 361.6,
+   "t0": 361.5,
    "dur": 37.8
   },
   {
@@ -435,102 +435,102 @@
    "pos": 4,
    "sample": 4,
    "t0": 391.0,
-   "dur": 14.5
+   "dur": 14.6
   },
   {
    "kind": "tip_wash",
    "pos": 4,
    "sample": 4,
-   "t0": 405.5,
+   "t0": 405.6,
    "dur": 4.7
   },
   {
    "kind": "plate_out",
    "pos": 4,
    "sample": 4,
-   "t0": 405.5,
+   "t0": 405.6,
    "dur": 15.6
   },
   {
    "kind": "plate_in",
    "pos": 0,
    "sample": 6,
-   "t0": 421.1,
+   "t0": 421.2,
    "dur": 13.8
   },
   {
    "kind": "cip",
    "pos": 4,
    "sample": 4,
-   "t0": 405.5,
+   "t0": 405.6,
    "dur": 37.8
   },
   {
    "kind": "arm_wet",
    "pos": 0,
    "sample": 6,
-   "t0": 435.0,
+   "t0": 435.1,
    "dur": 15.3
   },
   {
    "kind": "tip_wash",
    "pos": 0,
    "sample": 6,
-   "t0": 450.3,
+   "t0": 450.4,
    "dur": 4.7
   },
   {
    "kind": "plate_out",
    "pos": 0,
    "sample": 6,
-   "t0": 450.3,
+   "t0": 450.4,
    "dur": 15.6
   },
   {
    "kind": "plate_in",
    "pos": 1,
    "sample": 7,
-   "t0": 465.9,
+   "t0": 466.0,
    "dur": 13.8
   },
   {
    "kind": "cip",
    "pos": 0,
    "sample": 6,
-   "t0": 450.3,
+   "t0": 450.4,
    "dur": 37.8
   },
   {
    "kind": "arm_wet",
    "pos": 1,
    "sample": 7,
-   "t0": 479.8,
+   "t0": 479.9,
    "dur": 15.1
   },
   {
    "kind": "tip_wash",
    "pos": 1,
    "sample": 7,
-   "t0": 494.9,
+   "t0": 495.0,
    "dur": 4.7
   },
   {
    "kind": "plate_out",
    "pos": 1,
    "sample": 7,
-   "t0": 494.9,
+   "t0": 495.0,
    "dur": 15.6
   },
   {
    "kind": "cip",
    "pos": 1,
    "sample": 7,
-   "t0": 494.9,
+   "t0": 495.0,
    "dur": 37.8
   }
  ],
  "events": [],
- "wall_s": 425,
+ "wall_s": 449,
  "samples": [
   {
    "id": 0,
@@ -548,14 +548,14 @@
    },
    "dry": {
     "success": true,
-    "centroid_offset_mm": 0.5314045072132775,
+    "centroid_offset_mm": 0.6431155729410927,
     "defect": "flat"
    },
    "wet": {
     "success": true,
-    "centroid_offset_mm": 0.3043320868061899,
-    "flatness_mm": 0.0006036887725526792,
-    "max_lift_mm": -0.0013917906116923257,
+    "centroid_offset_mm": 0.3255541440622283,
+    "flatness_mm": 0.000596323365746707,
+    "max_lift_mm": -0.0013955486911059606,
     "fold": false,
     "air_pocket": false,
     "overhang": false,
@@ -578,14 +578,14 @@
    },
    "dry": {
     "success": true,
-    "centroid_offset_mm": 0.6545087050079763,
+    "centroid_offset_mm": 1.164941783336238,
     "defect": "flat"
    },
    "wet": {
     "success": true,
-    "centroid_offset_mm": 0.3325936105160102,
-    "flatness_mm": 0.0005953432385997396,
-    "max_lift_mm": -0.0014115911791002383,
+    "centroid_offset_mm": 0.41003688148034206,
+    "flatness_mm": 0.0005944482397644606,
+    "max_lift_mm": -0.0014005530110400982,
     "fold": false,
     "air_pocket": false,
     "overhang": false,
@@ -608,14 +608,14 @@
    },
    "dry": {
     "success": true,
-    "centroid_offset_mm": 0.42278097704420475,
+    "centroid_offset_mm": 0.34396130905965855,
     "defect": "flat"
    },
    "wet": {
     "success": true,
-    "centroid_offset_mm": 1.1231852378012053,
-    "flatness_mm": 0.0007047555639870044,
-    "max_lift_mm": -0.0014348947584858635,
+    "centroid_offset_mm": 0.8569483191603358,
+    "flatness_mm": 0.0006594833487943815,
+    "max_lift_mm": -0.0013852296336155229,
     "fold": false,
     "air_pocket": false,
     "overhang": false,
@@ -638,14 +638,14 @@
    },
    "dry": {
     "success": true,
-    "centroid_offset_mm": 0.833488339916314,
+    "centroid_offset_mm": 0.782846477378569,
     "defect": "flat"
    },
    "wet": {
     "success": true,
-    "centroid_offset_mm": 0.2952877220132119,
-    "flatness_mm": 0.0005892727500116527,
-    "max_lift_mm": -0.0014384273434465272,
+    "centroid_offset_mm": 0.8950847576373768,
+    "flatness_mm": 0.0006165201112595391,
+    "max_lift_mm": -0.0014232793402475102,
     "fold": false,
     "air_pocket": false,
     "overhang": false,
@@ -663,19 +663,19 @@
     "dosed": 202.1,
     "filtered": 309.7,
     "wet0": 391.0,
-    "transferred": 405.5,
-    "clean": 443.3
+    "transferred": 405.6,
+    "clean": 443.5
    },
    "dry": {
-    "success": true,
-    "centroid_offset_mm": 0.4786615224188276,
-    "defect": "flat"
+    "success": false,
+    "centroid_offset_mm": 4.028181678817654,
+    "defect": "misaligned"
    },
    "wet": {
     "success": true,
-    "centroid_offset_mm": 0.734692812685413,
-    "flatness_mm": 0.0006269749346729077,
-    "max_lift_mm": -0.0014271506756664137,
+    "centroid_offset_mm": 0.6842435700418509,
+    "flatness_mm": 0.0006065406773968302,
+    "max_lift_mm": -0.001433919910870038,
     "fold": false,
     "air_pocket": false,
     "overhang": false,
@@ -693,19 +693,19 @@
     "dosed": 224.8,
     "filtered": 295.0,
     "wet0": 347.0,
-    "transferred": 361.6,
+    "transferred": 361.5,
     "clean": 399.4
    },
    "dry": {
-    "success": false,
-    "centroid_offset_mm": 3.500340272299941,
-    "defect": "misaligned"
+    "success": true,
+    "centroid_offset_mm": 1.0620471859607774,
+    "defect": "flat"
    },
    "wet": {
     "success": true,
-    "centroid_offset_mm": 0.5802410910025722,
-    "flatness_mm": 0.0006028544384789839,
-    "max_lift_mm": -0.0013818098886838465,
+    "centroid_offset_mm": 0.791405107621319,
+    "flatness_mm": 0.0006082863506077092,
+    "max_lift_mm": -0.0014740345043121744,
     "fold": false,
     "air_pocket": false,
     "overhang": false,
@@ -722,20 +722,20 @@
     "loaded0": 222.2,
     "dosed": 258.4,
     "filtered": 329.8,
-    "wet0": 435.0,
-    "transferred": 450.3,
-    "clean": 488.1
+    "wet0": 435.1,
+    "transferred": 450.4,
+    "clean": 488.2
    },
    "dry": {
     "success": true,
-    "centroid_offset_mm": 0.3892810950715322,
+    "centroid_offset_mm": 0.49769284342882614,
     "defect": "flat"
    },
    "wet": {
     "success": true,
-    "centroid_offset_mm": 0.3284132923181984,
-    "flatness_mm": 0.0006054933462093076,
-    "max_lift_mm": -0.0013738133114050283,
+    "centroid_offset_mm": 0.2853139047513036,
+    "flatness_mm": 0.000590407956317113,
+    "max_lift_mm": -0.0013931268419368342,
     "fold": false,
     "air_pocket": false,
     "overhang": false,
@@ -752,20 +752,20 @@
     "loaded0": 278.1,
     "dosed": 324.3,
     "filtered": 401.5,
-    "wet0": 479.8,
-    "transferred": 494.9,
-    "clean": 532.7
+    "wet0": 479.9,
+    "transferred": 495.0,
+    "clean": 532.8
    },
    "dry": {
     "success": true,
-    "centroid_offset_mm": 1.106931372662527,
+    "centroid_offset_mm": 1.7444493410183448,
     "defect": "flat"
    },
    "wet": {
     "success": true,
-    "centroid_offset_mm": 0.41274449197523794,
-    "flatness_mm": 0.0005948305062783477,
-    "max_lift_mm": -0.001414310361385826,
+    "centroid_offset_mm": 0.5344858307146039,
+    "flatness_mm": 0.0006004634327628935,
+    "max_lift_mm": -0.0013620598503048115,
     "fold": false,
     "air_pocket": false,
     "overhang": false,

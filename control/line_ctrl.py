@@ -18,7 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import numpy as np
 import mujoco
 
-from scene.line import (load, FRIT_X, FRIT_YS, FRIT_TOP, N_POS, N_SAMPLES, MAG, SPOT, LIDPARK, HOTEL, OUT,
+from scene.line import (update_telescopes, load, FRIT_X, FRIT_YS, FRIT_TOP, N_POS, N_SAMPLES, MAG, SPOT, LIDPARK, HOTEL, OUT,
                         JUNCTION_X, TIPWASH, VESSEL_X, VESSEL_YS, TIPRACK, WASTE, NOZ_X0, NOZ_Z0, WATER, SANI)
 from scene.cell import AGAR_TOP, PLATE_PITCH, MAGAZINE_TOP, ROOT, LIQUID
 from control.primitives import Robot, Recorder, min_jerk, down_rotation
@@ -149,12 +149,7 @@ class Line:
         if self.trace_dt and d.time >= self.next_trace:
             self.next_trace += self.trace_dt
             self.snap()
-        # doser shaft spans from the tip up to the beam
-        gid = self.m.geom("dshaft").id
-        tip_z = NOZ_Z0 + self.jhold["dz"]
-        half = max((0.68 - tip_z) / 2, 0.01)
-        self.m.geom_size[gid][1] = half
-        self.m.geom_pos[gid][2] = half
+        update_telescopes(self.m, self.d)
 
     def hud_state(self):
         return dict(t=self.d.time - self.t_start, out=self.out_count, n=self.n_samples, arm_busy=self.arm_busy_s,

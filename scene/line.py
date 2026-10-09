@@ -61,8 +61,11 @@ def funnel_xml(i, y, r_in=0.028, h=0.08, wall=0.002, n=20):
     g.append(f'<geom type="cylinder" size="{r_in+0.006:.4f} 0.005" pos="0 0 0.005" rgba="{DARK}" {CLEAR}/>')
     g.append(f'<geom type="cylinder" size="{r_in+0.004:.4f} 0.002" pos="0 0 {h:.4f}" rgba="{DARK}" {CLEAR}/>')
     g.append(f'<geom name="funnel{i}_liquid" type="cylinder" size="{r_in-0.0005:.4f} 0.0005" pos="0 0 0.0015" rgba="{LIQUID[:-4]}0" {CLEAR}/>')
+    g.append(f'<geom type="box" size="0.0175 0.004 0.004" pos="{r_in + 0.020:.4f} 0 {h - 0.008:.4f}" rgba="{STEEL}" {CLEAR}/>')   # arm to the guide
+    g.append(f'<geom type="box" size="0.009 0.009 0.006" pos="0.0705 0 {h - 0.008:.4f}" rgba="0.25 0.5 0.75 1" {CLEAR}/>')       # slider on the guide
     return (f'<body name="funnel{i}" pos="{FRIT_X} {y:.4f} 0.099" gravcomp="1">'
-            f'<joint name="flift{i}" type="slide" axis="0 0 1" range="0 0.4" damping="1"/>{"".join(g)}</body>')
+            f'<joint name="flift{i}" type="slide" axis="0 0 1" range="0 0.4" damping="1"/>{"".join(g)}</body>'
+            f'<geom type="box" size="0.003 0.003 0.26" pos="{FRIT_X + 0.0705:.4f} {y:.4f} 0.36" rgba="{STEEL}" {CLEAR}/>')       # fixed guide column
 
 
 def fine_tiles(prefix, z_top, solref="0.005 1"):
@@ -116,7 +119,7 @@ def base_xml():
                        f'<geom name="vessel{k}_liquid" type="cylinder" size="0.0185 0.025" pos="0 0 0.026" rgba="{LIQUID}" {CLEAR}/>'
                        f'<geom type="cylinder" size="0.0215 0.006" pos="0 0 0.086" rgba="0.2 0.45 0.7 1" {CLEAR}/>'
                        f'<geom type="cylinder" size="0.008 0.002" pos="0 0 0.093" rgba="0.1 0.1 0.12 1" {CLEAR}/></body>')
-    tips = "".join(f'<geom name="tip{j}" type="capsule" size="0.003 0.012" pos="{TIPRACK[0] + 0.012 * (j % 4 - 1.5):.4f} {TIPRACK[1] + 0.012 * (j // 4 - 0.5):.4f} 0.052" rgba="0.8 0.85 0.9 0.9" {CLEAR}/>'
+    tips = "".join(f'<geom name="tip{j}" type="capsule" size="0.003 0.012" pos="{TIPRACK[0] + 0.012 * (j % 4 - 1.5):.4f} {TIPRACK[1] + 0.012 * (j // 4 - 0.5):.4f} 0.040" rgba="0.8 0.85 0.9 0.9" {CLEAR}/>'
                    for j in range(N_SAMPLES))
 
     # --- plate hotel (static outline) and rails
@@ -240,15 +243,15 @@ def base_xml():
       <geom type="box" size="0.012 0.012 0.1" pos="0 0.15 0.1" rgba="{STEEL}" {CLEAR}/>
       <body name="lidz" pos="0 0 0.18" gravcomp="1">
         <joint name="lgz" type="slide" axis="0 0 1" range="-0.2 0.01" damping="1"/>
-        <geom type="cylinder" size="0.004 0.03" pos="0 0 0.02" rgba="0.3 0.3 0.33 1" {CLEAR}/>
+        <geom name="lidstem" type="cylinder" size="0.004 0.03" pos="0 0 0.02" rgba="0.3 0.3 0.33 1" {CLEAR}/>
         <geom type="cylinder" size="0.022 0.004" pos="0 0 -0.012" rgba="0.15 0.15 0.18 1" {CLEAR}/>
       </body>
     </body>
 
     <!-- doser gantry: Y rail with carriage, X slide, Z nozzle -->
     <geom type="box" size="0.02 0.5 0.02" pos="{GANTRY_X} 0 {BEAM_Z + 0.04}" rgba="0.6 0.62 0.66 1" {CLEAR}/>
-    <geom type="box" size="0.02 0.02 0.3" pos="{GANTRY_X} -0.5 0.3" rgba="0.6 0.62 0.66 1" {CLEAR}/>
-    <geom type="box" size="0.02 0.02 0.3" pos="{GANTRY_X} 0.5 0.3" rgba="0.6 0.62 0.66 1" {CLEAR}/>
+    <geom type="box" size="0.02 0.02 0.32" pos="{GANTRY_X} -0.5 0.32" rgba="0.6 0.62 0.66 1" {CLEAR}/>
+    <geom type="box" size="0.02 0.02 0.32" pos="{GANTRY_X} 0.5 0.32" rgba="0.6 0.62 0.66 1" {CLEAR}/>
     <body name="dcar" pos="{GANTRY_X} 0 {BEAM_Z}" gravcomp="1">
       <joint name="dy" type="slide" axis="0 1 0" range="-0.46 0.46" damping="1"/>
       <geom type="box" size="0.04 0.045 0.03" pos="0 0 0.02" rgba="0.25 0.5 0.75 1" {CLEAR}/>
@@ -256,6 +259,7 @@ def base_xml():
       <body name="dslide" pos="{NOZ_X0 - GANTRY_X} 0 -0.03" gravcomp="1">
         <joint name="dx" type="slide" axis="1 0 0" range="-0.34 0.02" damping="1"/>
         <geom type="box" size="0.03 0.025 0.02" pos="0 0 0" rgba="0.25 0.5 0.75 1" {CLEAR}/>
+        <geom type="cylinder" size="0.009 0.03" pos="0 0 -0.04" rgba="0.2 0.4 0.62 1" {CLEAR}/>
         <body name="dnoz" pos="0 0 {NOZ_Z0 - BEAM_Z + 0.03}" gravcomp="1">
           <joint name="dz" type="slide" axis="0 0 1" range="-0.45 0.02" damping="1"/>
           <geom name="dshaft" type="cylinder" size="0.004 0.05" pos="0 0 0.05" rgba="{STEEL}" {CLEAR}/>
@@ -287,3 +291,17 @@ def load():
     d = mujoco.MjData(m)
     home(m, d)
     return m, d
+
+
+def update_telescopes(m, d):
+    """Stretch the doser rod and the lid-lifter stem so each stays attached to its anchor (slide block / bar)."""
+    tip = NOZ_Z0 + d.qpos[m.jnt_qposadr[m.joint("dz").id]]
+    half = max((BEAM_Z - 0.05 - tip) / 2, 0.01)             # rod top is the slide block's underside
+    g = m.geom("dshaft").id
+    m.geom_size[g][1] = half
+    m.geom_pos[g][2] = half
+    lgz = d.qpos[m.jnt_qposadr[m.joint("lgz").id]]
+    length = -lgz + 0.008                                     # from the cup top up to the bar's underside (world z 0.18)
+    g = m.geom("lidstem").id
+    m.geom_size[g][1] = length / 2
+    m.geom_pos[g][2] = -0.008 + length / 2
